@@ -50,7 +50,7 @@
 ┃ ┗ index.html
 ┣ 📁 src/
 ┃ ┣ components/
-┃ ┃ ┣ UploadImage.js ← 이미지 업로드 
+┃ ┃ ┣ Image.js ← 이미지 업로드 
 ┃ ┃ ┣ StickerList.js ← 스티커 목록 
 ┃ ┃ ┣ CanvasEditor.js ← 드래그·드롭 편집기
 ┃ ┃ ┗ SaveButton.js ← 결과 저장 버튼
