@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Image Editor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="./css/editor.css" />
+</head>
+
+<body>
+  <div class="editor-wrapper">
+    <div class="editor-main">
+
+      <!-- 왼쪽 : 편집 캔버스 -->
+      <div class="editor-left">
+        <div id="photoBox" class="photo-box">
+          <span id="uploadText">📸 클릭해서 사진 업로드</span>
+          <input type="file" id="fileInput" accept="image/*" hidden />
+        </div>
+      </div>
+
+      <!-- 오른쪽 : 스티커 패널 -->
+      <div class="sticker-panel" id="stickerPanel"></div>
+    </div>
+
+<div class="editor-bottom">
+  <button class="glass-btn" onclick="goBack()">← back</button>
+  <button class="glass-btn" onclick="flipSticker()">↔ flip</button>
+  <button class="glass-btn" onclick="deleteSticker()">delete</button>
+  <button class="glass-btn" onclick="saveImage()">save</button>
+</div>
+
+
+    <div id="toast" class="save-toast">저장을 완료하였습니다!</div>
+  </div>
+
+  <script src="./js/editor.js"></script>
+</body>
+</html>
