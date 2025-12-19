@@ -7,19 +7,23 @@
   overflow: hidden;
 }
 
+/* ⭐ 메인 영역 높이 명확히 */
 .editor-main {
   flex: 1;
   display: flex;
   align-items: flex-start;
   padding-top: 40px;
+  height: calc(100vh - 64px);
 }
 
+/* 사진 영역 — 스크롤 없음 */
 .editor-left {
   flex: 1;
   display: flex;
   justify-content: center;
 }
 
+/* 사진 박스 */
 .photo-box {
   width: 780px;
   height: 780px;
@@ -42,13 +46,16 @@
   pointer-events: none;
 }
 
+/* ⭐ 스티커 패널 — 여기만 스크롤 */
 .sticker-panel {
   width: 340px;
   margin: 24px;
+  height: calc(100% - 48px);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   overflow-y: auto;
+  padding-right: 6px;
 }
 
 .sticker-box {
@@ -68,6 +75,7 @@
   pointer-events: none;
 }
 
+/* 스티커 편집 */
 .sticker-wrap {
   position: absolute;
   cursor: move;
@@ -113,6 +121,7 @@
   font-size: 14px;
 }
 
+/* 하단 버튼 */
 .editor-bottom {
   height: 64px;
   display: flex;
@@ -139,22 +148,33 @@
   text-decoration: underline;
 }
 
-.save-toast {
-  position: fixed;
-  bottom: 90px;
-  left: 50%;
-  transform: translateX(-50%) translateY(10px);
-  background: rgba(15, 23, 42, 0.9);
-  color: white;
-  padding: 12px 24px;
-  border-radius: 999px;
-  font-size: 14px;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.25s ease;
+
+/* ===============================
+   Responsive (Mobile / Tablet)
+================================ */
+
+@media (max-width: 1024px) {
+  .photo-box {
+    width: 90vw;
+    height: 90vw;
+    max-width: 600px;
+    max-height: 600px;
+  }
+
+  .sticker-panel {
+    width: 260px;
+  }
 }
 
-.save-toast.show {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
+@media (max-width: 768px) {
+  .editor-main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sticker-panel {
+    width: 90vw;
+    height: 180px;
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
